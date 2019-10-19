@@ -1,42 +1,7 @@
 <html>
 <head>
-<link rel="stylesheet" href="reset.css">
-<style>
-.roulette{
-display: inline-flex;
-    justify-content: flex-start;
-	flex-wrap:wrap;
-    width: 100%;}
-	.roulette-number{
-		width:6%;
-		text-align:center;
-		margin:1%;
-		padding:1.5%;
-	}
-	.roulette-number:nth-child(2n+1){
-		background-color:black;
-		color:white;
-	}
-	.roulette-number:nth-child(2n){
-		background-color:red;
-		color:black;
-	}.roulette-number.green{
-		background-color:green;
-		color:white;
-	}
-	#start{
-	width: 32%;
-    margin: 4% auto;
-    align-items: center;
-    padding: 2% 0;
-    background-color: gold;
-    font-size: 30px;
-    font-weight: bold;
-    font-family: sans-serif;
-    display: block;}
-	h1{font-size:40px;font-weight:bold;}
-	h2{font-size:32px}
-</style>
+<link rel="stylesheet" href="assets/css/reset.css">
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 <div class="roulette">
@@ -156,39 +121,8 @@ display: inline-flex;
 </div>
 <button id="start" onclick="startRoulette()">Start</button>
 <h1>Number from roulette: <span id="chosenNumber"></span> </h1>
-<h1>Color from roulette: <span id="chosenColor"></span> </h1>
+<!--<h1>Color from roulette: <span id="chosenColor"></span> </h1>-->
 
-<script>
-var stop = 0;
-var i = 0;
-var number = 0;
-var color = "green";
-function startRoulette(){
-stop = 0;
-var numbers = document.querySelectorAll('.roulette-number');
-var endTime = Math.random()*7000+10000;
-numbers[i].style.border = "5px solid gold";
-setTimeout(function(){
-	stop=1;
-	var chosenN = document.getElementById('chosenNumber');
-	var chosenC = document.getElementById('chosenColor');
-	chosenN.innerHTML = number;
-	chosenC.innerHTML = color;
-},endTime);
-setTimeout(function(){spin(numbers)},500);
-}
-function spin(numbers){
-	if(stop==0){
-		numbers[i].style.border = "none";
-		numbers[(i+1)%numbers.length].style.border = "5px solid gold";
-		i=(i+1)%numbers.length;
-		number = numbers[i].children[0].innerHTML;
-		console.log(numbers.item(i));
-		color = numbers[i].style.backgroundColor;
-		
-		setTimeout(function(){spin(numbers)},80);
-	}
-}
-</script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>

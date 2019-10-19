@@ -1,0 +1,8 @@
+	h1{font-size:40px;font-weight:bold;}
+	h2{font-size:32px}
+	.roulette{display: inline-flex; justify-content: flex-start;flex-wrap:wrap; width: 100%;}
+	.roulette-number{width:6%;	text-align:center;	margin:1%;	padding:1.5%;}
+	.roulette-number:nth-child(2n+1){background-color:black;color:white;}
+	.roulette-number:nth-child(2n){	background-color:red;color:black;}
+		.roulette-number.green{	background-color:green;	color:white;}
+	#start{	width: 32%; margin: 4% auto; align-items: center; padding: 2% 0;  background-color: gold; font-size: 30px; font-weight: bold; font-family: sans-serif;  display: block;}
