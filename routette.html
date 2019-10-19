@@ -1,0 +1,194 @@
+<html>
+<head>
+<link rel="stylesheet" href="reset.css">
+<style>
+.roulette{
+display: inline-flex;
+    justify-content: flex-start;
+	flex-wrap:wrap;
+    width: 100%;}
+	.roulette-number{
+		width:6%;
+		text-align:center;
+		margin:1%;
+		padding:1.5%;
+	}
+	.roulette-number:nth-child(2n+1){
+		background-color:black;
+		color:white;
+	}
+	.roulette-number:nth-child(2n){
+		background-color:red;
+		color:black;
+	}.roulette-number.green{
+		background-color:green;
+		color:white;
+	}
+	#start{
+	width: 32%;
+    margin: 4% auto;
+    align-items: center;
+    padding: 2% 0;
+    background-color: gold;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: sans-serif;
+    display: block;}
+	h1{font-size:40px;font-weight:bold;}
+	h2{font-size:32px}
+</style>
+</head>
+<body>
+<div class="roulette">
+<div class="roulette-number green">
+<h2>0</h2>
+</div>
+<div class="roulette-number">
+<h2>32</h2>
+</div>
+<div class="roulette-number">
+<h2>15</h2>
+</div>
+<div class="roulette-number">
+<h2>19</h2>
+</div>
+<div class="roulette-number">
+<h2>4</h2>
+</div>
+<div class="roulette-number">
+<h2>21</h2>
+</div>
+<div class="roulette-number">
+<h2>2</h2>
+</div>
+<div class="roulette-number">
+<h2>25</h2>
+</div>
+<div class="roulette-number">
+<h2>17</h2>
+</div>
+<div class="roulette-number">
+<h2>34</h2>
+</div>
+<div class="roulette-number">
+<h2>6</h2>
+</div>
+<div class="roulette-number">
+<h2>27</h2>
+</div>
+<div class="roulette-number">
+<h2>13</h2>
+</div>
+<div class="roulette-number">
+<h2>36</h2>
+</div>
+<div class="roulette-number">
+<h2>11</h2>
+</div>
+<div class="roulette-number">
+<h2>30</h2>
+</div>
+<div class="roulette-number">
+<h2>8</h2>
+</div>
+<div class="roulette-number">
+<h2>23</h2>
+</div>
+<div class="roulette-number">
+<h2>10</h2>
+</div>
+<div class="roulette-number">
+<h2>5</h2>
+</div>
+<div class="roulette-number">
+<h2>24</h2>
+</div>
+<div class="roulette-number">
+<h2>16</h2>
+</div>
+<div class="roulette-number">
+<h2>33</h2>
+</div>
+<div class="roulette-number">
+<h2>1</h2>
+</div>
+<div class="roulette-number">
+<h2>20</h2>
+</div>
+<div class="roulette-number">
+<h2>14</h2>
+</div>
+<div class="roulette-number">
+<h2>31</h2>
+</div>
+<div class="roulette-number">
+<h2>9</h2>
+</div>
+<div class="roulette-number">
+<h2>22</h2>
+</div>
+<div class="roulette-number">
+<h2>18</h2>
+</div>
+<div class="roulette-number">
+<h2>29</h2>
+</div>
+<div class="roulette-number">
+<h2>7</h2>
+</div>
+<div class="roulette-number">
+<h2>28</h2>
+</div>
+<div class="roulette-number">
+<h2>12</h2>
+</div>
+<div class="roulette-number">
+<h2>35</h2>
+</div>
+<div class="roulette-number">
+<h2>3</h2>
+</div>
+<div class="roulette-number">
+<h2>26</h2>
+</div>
+
+
+</div>
+<button id="start" onclick="startRoulette()">Start</button>
+<h1>Number from roulette: <span id="chosenNumber"></span> </h1>
+<h1>Color from roulette: <span id="chosenColor"></span> </h1>
+
+<script>
+var stop = 0;
+var i = 0;
+var number = 0;
+var color = "green";
+function startRoulette(){
+stop = 0;
+var numbers = document.querySelectorAll('.roulette-number');
+var endTime = Math.random()*7000+10000;
+numbers[i].style.border = "5px solid gold";
+setTimeout(function(){
+	stop=1;
+	var chosenN = document.getElementById('chosenNumber');
+	var chosenC = document.getElementById('chosenColor');
+	chosenN.innerHTML = number;
+	chosenC.innerHTML = color;
+},endTime);
+setTimeout(function(){spin(numbers)},500);
+}
+function spin(numbers){
+	if(stop==0){
+		numbers[i].style.border = "none";
+		numbers[(i+1)%numbers.length].style.border = "5px solid gold";
+		i=(i+1)%numbers.length;
+		number = numbers[i].children[0].innerHTML;
+		console.log(numbers.item(i));
+		color = numbers[i].style.backgroundColor;
+		
+		setTimeout(function(){spin(numbers)},80);
+	}
+}
+</script>
+</body>
+</html>
