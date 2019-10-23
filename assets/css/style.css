@@ -1,8 +1,72 @@
 	h1{font-size:40px;font-weight:bold;}
 	h2{font-size:32px}
-	.roulette{display: inline-flex; justify-content: flex-start;flex-wrap:wrap; width: 100%;}
-	.roulette-number{width:6%;	text-align:center;	margin:1%;	padding:1.5%;}
-	.roulette-number:nth-child(2n+1){background-color:black;color:white;}
-	.roulette-number:nth-child(2n){	background-color:red;color:black;}
-		.roulette-number.green{	background-color:green;	color:white;}
-	#start{	width: 32%; margin: 4% auto; align-items: center; padding: 2% 0;  background-color: gold; font-size: 30px; font-weight: bold; font-family: sans-serif;  display: block;}
+	.roulette{display: inline-flex; justify-content: space-between;flex-wrap:wrap; width: 100%;}
+	.roulette-number{width:6%;	text-align:center;	margin:1%;	padding:1.5%;border:none; position:relative;}
+	.roulette-number.black{background-color:black;color:white;}
+	.roulette-number.red{	background-color:red;color:black;}
+	.roulette-number.green{	background-color:green;	color:white;}
+	.roulette-number.active {border:5px solid gold;}
+	.roulette-number.active:before {content: " ";position: absolute;top: -17.5%;width: 0;height: 0;border-style: solid;border-width: 26.0px 15px 0 15px;border-color: #ffbf00 transparent transparent transparent;left: 36%;/* right: 0; */}
+	#start {
+		width: 20%;
+		margin: auto 0;
+		padding: 2% 0;
+		margin-left: 5%;
+		background-color: gold;
+		font-size: 30px;
+		font-weight: bold;
+		font-family: sans-serif;
+		display: block;
+		border-radius: 11px;
+	}
+	.card {
+		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+		transition: 0.3s;
+		width: 30%;
+		display: flex;
+		align-items: flex-start;
+		flex-direction: column;
+		justify-content: center;
+		padding: 3%;
+		margin-left: 14%;
+		flex-wrap: wrap;
+	}
+	.card h1{
+		line-height: 56px;
+	}
+	.card:hover {	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);	}
+
+.card-container {
+    display: inline-flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+@-webkit-keyframes spaceboots {
+	0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+	10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
+	20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
+	30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
+	40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+	50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
+	60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+	70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
+	80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+	90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
+	100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.shake {
+	-webkit-animation-name: spaceboots;
+	-webkit-animation-duration: 0.8s;
+	-webkit-transform-origin:50% 50%;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+}
+
+.grow
+{
+-webkit-transform: scale(1.1);
+-ms-transform: scale(1.1);
+transform: scale(1.1);
+}
