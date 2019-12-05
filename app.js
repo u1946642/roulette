@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+const server = require('http').Server(app);
+const io = require('socket.io')(server);
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const redis = require("redis");
@@ -12,6 +14,8 @@ module.exports = app;
 */
 const PORT = process.env.PORT || 3000;
 
+
+app.set('socketio', io);
 
 app.use(express.static('public'));
 
@@ -29,12 +33,28 @@ app.use('/api', apiRouter);
 // This conditional is here for testing purposes:
 if (!module.parent) {
   // Add your code to start the server listening at PORT below:
-  app.listen(PORT, () => {
+  server.listen(PORT, () => {
     console.log(`Listening to port ${PORT}`);
     populateDB();
   });
 }
 
+setInterval(() => {
+  let winningNumber = Math.round(Math.random() * 36);
+  client.get("tirada", (err, reply) => {
+    const tirada = reply;
+    if (err) console.error(err);
+    else {
+      client.incr("tirada",redis.print);
+      const key = "numbers:" + winningNumber;
+      client.hgetall(key, (err, reply) => {
+        if (err) console.error(err);
+        else io.emit('state', JSON.stringify({ number: reply, tirada: tirada }));
+      });
+    }
+  });
+
+}, 10000);
 
 
 const populateDB = () => {
@@ -44,7 +64,7 @@ const populateDB = () => {
   dbJson = JSON.parse(fs.readFileSync('./db.json'));
 
   dbJson.numbers.forEach(element => {
-    client.hmset("numbers:"+element.number,["number",element.number,"color",element.color,"mult",element.mult]);
+    client.hmset("numbers:" + element.number, ["number", element.number, "color", element.color, "mult", element.mult]);
   });
 
 };

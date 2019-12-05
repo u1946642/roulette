@@ -1,0 +1,14 @@
+.roulette {
+    width: 65%;
+    justify-content: unset;
+    margin-top: 1%;
+    margin-left: 1%;
+  }
+td {
+    border: 1px solid white;
+    vertical-align: middle;
+  }
+.roulette table {
+  width: 100%;
+  border-collapse: unset;
+}

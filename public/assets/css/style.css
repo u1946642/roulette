@@ -1,7 +1,7 @@
 	h1{font-size:40px;font-weight:bold;}
 	h2{font-size:32px}
 	.roulette{display: inline-flex; justify-content: space-between;flex-wrap:wrap; width: 100%;}
-	.roulette-number{width:6%;	text-align:center;	margin:1%;	padding:1.5%;border:none; position:relative;}
+	.roulette-number{width:6%;	text-align:center;	margin:1%;	padding:1.5%; position:relative;}
 	.roulette-number.black{background-color:black;color:white;}
 	.roulette-number.red{	background-color:red;color:black;}
 	.roulette-number.green{	background-color:green;	color:white;}
