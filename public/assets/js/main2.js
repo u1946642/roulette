@@ -3,8 +3,24 @@ var socket = io.connect("http://localhost:3000", { forceNew: true });
 socket.on("state", function(data) {
   console.log(JSON.parse(data));
   var state = JSON.parse(data);
-  document.getElementById("chosenNumber").innerHTML = state.number.number;
-  document.getElementById("chosenColor").innerHTML = state.number.color;
+  const numberCont = document.getElementById("winning-number");
+  var randomInterval = setInterval(()=>{
+    const n = Math.round(Math.random() * 36);
+    numberCont.innerHTML =  n;
+    numberCont.classList.remove("black");
+    numberCont.classList.remove("green");
+    numberCont.classList.remove("red");
+    numberCont.classList.add(n==0?"green":(n%2==0)?"red":"black");
+  },80);
+  setTimeout(()=>{
+    clearInterval(randomInterval);
+    numberCont.innerHTML = state.number.number;
+    numberCont.classList.remove("black");
+    numberCont.classList.remove("green");
+    numberCont.classList.remove("red");
+    numberCont.classList.add(state.number.color);
+  },5000);
+  
 });
 
 window.setInterval(() => {

@@ -12,3 +12,56 @@ td {
   width: 100%;
   border-collapse: unset;
 }
+
+
+.roulette-cont-lft {
+  width: 65%;
+}
+
+.roulette-cont-rgt {
+  width: 34%;
+  display: inline-block;
+  padding: 1%;
+}
+
+.roulette-cont-lft {
+  width: 64%;
+  display: inline-block;
+}
+
+#winning-number {
+  width: 25%;
+  margin: 0 auto;
+  text-align: center;
+  min-height: 126px;
+  font-size: 30px;
+  vertical-align: middle;
+  display: flex;
+  place-items: center;
+  margin: 3% auto;
+  border:5px solid gold;
+  justify-content: center;
+}
+
+.roulette-cont-rgt {
+
+  width: 32%;
+  float: right;
+}
+
+.roulette-cont-lft {
+  float: left;
+}
+
+
+.roulette {
+  width: 100%;
+  padding: 1%;
+}
+
+section{
+  width:100%;
+}
+.black{background-color:black;color:white;}
+.red{	background-color:red;color:black;}
+.green{	background-color:green;	color:white;}
