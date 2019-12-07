@@ -42,14 +42,12 @@ router.post("/", (req, res, next) => {
 router.get("/", (req, res, next) => {
     getUsers()
         .then(users => {
-            console.log(users);
             res.send({ users: users });
         })
         .then(err => res.status(500).send());
 });
 
 router.get("/:userId/saldo", (req, res, next) => {
-    console.log(req.params);
     client.hgetall("usuaris:"+req.params.userId,(err,reply) =>{
         if(err)res.status(500).send();
         res.send({"saldo":reply.saldo});

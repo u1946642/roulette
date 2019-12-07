@@ -59,7 +59,10 @@ setInterval(() => {
 
 const populateDB = () => {
   client.set("tirada", 1, redis.print);
-  client.set("indexUsuari", 1001, redis.print);
+  client.get("indexUsuari",(err,reply)=>{
+    if(!reply) client.set("indexUsuari", 1001, redis.print);
+  });
+  
   let dbJson = {};
   dbJson = JSON.parse(fs.readFileSync('./db.json'));
 

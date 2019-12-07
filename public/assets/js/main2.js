@@ -34,7 +34,7 @@ socket.on("state", function(data) {
     }, 5000);
 });
 
-window.setInterval(() => {
+const refreshUsersList = () => {
     var request = new XMLHttpRequest();
     const apiPath = "/api/users";
     request.open("GET", hostname + apiPath, true);
@@ -57,7 +57,9 @@ window.setInterval(() => {
         }
     };
     request.send();
-}, 5000);
+};
+refreshUsersList();
+window.setInterval(refreshUsersList(), 5000);
 
 const rouletteNumbers = document.getElementsByClassName("roulette-number");
 Array.from(rouletteNumbers).forEach(element => {
