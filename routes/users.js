@@ -25,6 +25,7 @@ const getUsers = () => {
 
 
 router.post('/', (req, res, next) => {
+    const io = req.app.get("socketio");
     client.get("indexUsuari", (err, reply) => {
         reply = reply ? reply : 100000000;
         client.incr("indexUsuari", redis.print);
@@ -36,7 +37,8 @@ router.post('/', (req, res, next) => {
 });
 router.get('/', (req, res, next) => {
     getUsers().then((users) => {
-        res.send(users);
+        console.log(users);
+        res.send({"users":users});
     }).then((err) => res.status(500).send());
 });
 
