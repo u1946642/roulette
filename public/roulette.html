@@ -11,7 +11,7 @@
     <!-- Header ends -->
 
     <body>
-        <section class="roulette-container">
+        <section class="roulette-container cf">
             <div class="roulette-cont-lft">
                 <div class="roulette">
                     <table>
@@ -65,17 +65,29 @@
                 <div id="winning-number"></div>
             </div>
         </section>
-        <section class="active-users">
-            <div class="card-container">
-                <div class="card">
-                    <h1>Users</h1>
-                    <ul id="usersList"></ul>
+        <section id="bets">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit aperiam consectetur quisquam, excepturi dicta distinctio nam modi rerum cumque ducimus, qui repellendus quis possimus quas nihil eaque fugit. Dolore, optio? </p>
+        </section>
+        <section id="users-info">
+            <div class="card-lft">
+                <div class="card-container">
+                    <div class="card">
+                        <h1>Users</h1>
+                        <ul id="usersList"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card-rgt">
+                <div class="card-container">
+                    <div class="card">
+                        <h1>My balance</h1>
+                        <p id="balance"></p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Footer starts -->
-        <!-- <script src="assets/js/main.js"></script> -->
         <script src="/socket.io/socket.io.js"></script>
         <script src="/assets/js/main2.js"></script>
     </body>

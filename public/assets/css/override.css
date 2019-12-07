@@ -31,6 +31,7 @@ td {
 
 #winning-number {
   width: 25%;
+  max-width: 120px;
   margin: 0 auto;
   text-align: center;
   min-height: 126px;
@@ -61,7 +62,46 @@ td {
 
 section{
   width:100%;
+  padding: 1%;
 }
 .black{background-color:black;color:white;}
 .red{	background-color:red;color:black;}
 .green{	background-color:green;	color:white;}
+
+.card-lft {
+  width: 50%;
+  float: left;
+}
+
+.card-rgt {
+  width: 50%;
+  float: right;
+}
+
+.card {
+  /* width: 30%; */
+  width: 70%;
+}
+#bets{
+  min-height: 100px;
+}
+
+#balance {
+  font-size: 20px;
+  margin: 2%;
+}
+
+#usersList {
+  font-size: 20px;
+  margin-left: 6%;
+  list-style: circle;
+}
+
+#usersList li {
+  margin-top:2px;
+  margin-bottom: 3px;
+}
+
+h1 {
+  font-size: 46px;
+}
