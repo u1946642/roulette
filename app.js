@@ -7,12 +7,14 @@ const cors = require('cors');
 const redis = require("redis");
 const client = redis.createClient();
 const fs = require('fs');
+const {getTime,setTimer} = require('./timerCont.js');
 module.exports = app;
 
 /* Do not change the following line! It is required for testing and allowing
 *  the frontend application to interact as planned with the api server
 */
 const PORT = process.env.PORT || 3000;
+const ROUND_TIME = 30000;
 
 
 app.set('socketio', io);
@@ -40,6 +42,7 @@ if (!module.parent) {
 }
 
 setInterval(() => {
+  setTimer((ROUND_TIME/1000));
   let winningNumber = Math.round(Math.random() * 36);
   client.get("tirada", (err, reply) => {
     const tirada = reply;
@@ -49,13 +52,13 @@ setInterval(() => {
       const key = "numbers:" + winningNumber;
       client.hgetall(key, (err, reply) => {
         if (err) console.error(err);
-        else io.emit('state', JSON.stringify({ number: reply, tirada: tirada }));
+        else io.emit('state', JSON.stringify({ number: reply, tirada: tirada,temps:getTime()-2}));
       });
     }
   });
 
-}, 20000);
-
+}, ROUND_TIME);
+setTimer((ROUND_TIME/1000));
 
 const populateDB = () => {
   client.set("tirada", 1, redis.print);

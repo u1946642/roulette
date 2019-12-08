@@ -1,94 +1,117 @@
 <html>
-    <!-- Header starts -->
+<!-- Header starts -->
 
-    <head>
-        <title>~ROOOOOOULETE~</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="assets/css/reset.css" />
-        <link rel="stylesheet" href="assets/css/style.css" />
-        <link rel="stylesheet" href="assets/css/override.css" />
-    </head>
-    <!-- Header ends -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
 
-    <body class="roulette-page">
-        <section class="roulette-container cf">
-            <div class="roulette-cont-lft">
-                <div class="roulette">
-                    <table>
-                        <tr>
-                            <td class="roulette-number green" rowspan="3">0</td>
-                            <td class="roulette-number red">1</td>
-                            <td class="roulette-number black">4</td>
-                            <td class="roulette-number red">7</td>
-                            <td class="roulette-number black">10</td>
-                            <td class="roulette-number black">13</td>
-                            <td class="roulette-number red">16</td>
-                            <td class="roulette-number red">19</td>
-                            <td class="roulette-number black">22</td>
-                            <td class="roulette-number red">25</td>
-                            <td class="roulette-number black">28</td>
-                            <td class="roulette-number black">31</td>
-                            <td class="roulette-number red">34</td>
-                        </tr>
-                        <tr>
-                            <td class="roulette-number black">2</td>
-                            <td class="roulette-number red">5</td>
-                            <td class="roulette-number black">8</td>
-                            <td class="roulette-number black">11</td>
-                            <td class="roulette-number red">14</td>
-                            <td class="roulette-number black">17</td>
-                            <td class="roulette-number black">20</td>
-                            <td class="roulette-number red">23</td>
-                            <td class="roulette-number black">26</td>
-                            <td class="roulette-number black">29</td>
-                            <td class="roulette-number red">32</td>
-                            <td class="roulette-number black">35</td>
-                        </tr>
-                        <tr>
-                            <td class="roulette-number red">3</td>
-                            <td class="roulette-number black">9</td>
-                            <td class="roulette-number red">9</td>
-                            <td class="roulette-number red">12</td>
-                            <td class="roulette-number black">15</td>
-                            <td class="roulette-number red">18</td>
-                            <td class="roulette-number red">21</td>
-                            <td class="roulette-number black">24</td>
-                            <td class="roulette-number red">27</td>
-                            <td class="roulette-number red">30</td>
-                            <td class="roulette-number black">33</td>
-                            <td class="roulette-number red">36</td>
-                        </tr>
-                    </table>
+    <title>W-W Roulette</title>
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/override.css" />
+    <link rel="stylesheet" href="assets/css/slick.css" />
+</head>
+<!-- Header ends -->
+
+<body class="roulette-page">
+    <section class="roulette-container cf">
+        <div class="roulette-cont-lft">
+            <div class="roulette">
+                <table>
+                    <tr>
+                        <td class="roulette-number green" rowspan="3">0</td>
+                        <td class="roulette-number red">1</td>
+                        <td class="roulette-number black">4</td>
+                        <td class="roulette-number red">7</td>
+                        <td class="roulette-number black">10</td>
+                        <td class="roulette-number black">13</td>
+                        <td class="roulette-number red">16</td>
+                        <td class="roulette-number red">19</td>
+                        <td class="roulette-number black">22</td>
+                        <td class="roulette-number red">25</td>
+                        <td class="roulette-number black">28</td>
+                        <td class="roulette-number black">31</td>
+                        <td class="roulette-number red">34</td>
+                    </tr>
+                    <tr>
+                        <td class="roulette-number black">2</td>
+                        <td class="roulette-number red">5</td>
+                        <td class="roulette-number black">8</td>
+                        <td class="roulette-number black">11</td>
+                        <td class="roulette-number red">14</td>
+                        <td class="roulette-number black">17</td>
+                        <td class="roulette-number black">20</td>
+                        <td class="roulette-number red">23</td>
+                        <td class="roulette-number black">26</td>
+                        <td class="roulette-number black">29</td>
+                        <td class="roulette-number red">32</td>
+                        <td class="roulette-number black">35</td>
+                    </tr>
+                    <tr>
+                        <td class="roulette-number red">3</td>
+                        <td class="roulette-number black">9</td>
+                        <td class="roulette-number red">9</td>
+                        <td class="roulette-number red">12</td>
+                        <td class="roulette-number black">15</td>
+                        <td class="roulette-number red">18</td>
+                        <td class="roulette-number red">21</td>
+                        <td class="roulette-number black">24</td>
+                        <td class="roulette-number red">27</td>
+                        <td class="roulette-number red">30</td>
+                        <td class="roulette-number black">33</td>
+                        <td class="roulette-number red">36</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="roulette-cont-rgt">
+            <div id="winning-number"></div>
+        </div>
+    </section>
+    <section id="bets" class="cf">
+        <div class="bets-lft">
+            <div class="number-input">
+                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
+                <input class="quantity" min="0" name="quantity" value="10" step="10" type="number" id="quantity" />
+                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+            </div>
+            <div id="countdown"></div>
+        </div>
+        <div class="bets-rgt">
+            <div class="carousel-bets"></div>
+        </div>
+    </section>
+    <section id="users-info">
+        <div class="card-lft">
+            <div class="card-container">
+                <div class="card">
+                    <h1>Users</h1>
+                    <ul id="usersList"></ul>
                 </div>
             </div>
-            <div class="roulette-cont-rgt">
-                <div id="winning-number"></div>
-            </div>
-        </section>
-        <section id="bets">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit aperiam consectetur quisquam, excepturi dicta distinctio nam modi rerum cumque ducimus, qui repellendus quis possimus quas nihil eaque fugit. Dolore, optio? </p>
-        </section>
-        <section id="users-info">
-            <div class="card-lft">
-                <div class="card-container">
-                    <div class="card">
-                        <h1>Users</h1>
-                        <ul id="usersList"></ul>
-                    </div>
+        </div>
+        <div class="card-rgt">
+            <div class="card-container">
+                <div class="card">
+                    <h1>My balance</h1>
+                    <p id="balance"></p>
+                    <p class="disclaimer">
+                        *If you need more balance, you should go in
+                        recharging page
+                    </p>
                 </div>
             </div>
-            <div class="card-rgt">
-                <div class="card-container">
-                    <div class="card">
-                        <h1>My balance</h1>
-                        <p id="balance"></p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Footer starts -->
-        <script src="/socket.io/socket.io.js"></script>
-        <script src="/assets/js/main2.js"></script>
-    </body>
+    <!-- Footer starts -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/assets/js/slick.min.js"></script>
+    <script src="/assets/js/main2.js"></script>
+</body>
+
 </html>
