@@ -36,7 +36,8 @@ h2 {
     width: 100%;
 }
 .roulette-page{
-	background-color:lightgray;
+	background: url(../img/roulette_background.jpg);
+    background-size: cover;
 }
 .roulette-number {
     width: 6%;
