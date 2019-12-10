@@ -3,8 +3,9 @@ var router = express.Router();
 var redis = require("redis");
 var client = redis.createClient();
 
-const SALDO_INICIAL = 20000;
+const SALDO_INICIAL = 10000;
 
+//retorna la llista d'usuaris guardats a la BBDD
 const getUsers = () => {
     return new Promise((resolve, reject) => {
         let usuaris = [];
@@ -42,6 +43,7 @@ router.post("/", (req, res, next) => {
         });
     });
 });
+
 router.get("/", (req, res, next) => {
     getUsers()
         .then(users => {
@@ -71,17 +73,21 @@ router.post("/:userId/aposta", (req, res, next) => {
         client.hget("usuaris:" + req.params.userId, "saldo", (err, reply) => {
             const saldoBefore = parseInt(reply);
             const saldoAfter = saldoBefore - req.body.quantity;
-            if(saldoAfter<0){
-                res.status(400).send("Falta saldo per realitzar aquesta aposta");
-            }else{
-                client.hset("usuaris:" + req.params.userId, "saldo", saldoAfter);
-            client.hmset(key, ["quantity", quantity]);
-            res.status(201).send("Aposta guardada correctament");
+            if (saldoAfter < 0) {
+                res.status(400).send(
+                    "Falta saldo per realitzar aquesta aposta"
+                );
+            } else {
+                client.hset(
+                    "usuaris:" + req.params.userId,
+                    "saldo",
+                    saldoAfter
+                );
+                client.hmset(key, ["quantity", quantity]);
+                res.status(201).send("Aposta guardada correctament");
             }
-            
         });
     });
 });
-
 
 module.exports = router;

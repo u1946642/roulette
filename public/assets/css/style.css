@@ -35,8 +35,8 @@ h2 {
     flex-wrap: wrap;
     width: 100%;
 }
-.roulette-page{
-	background: url(../img/roulette_background.jpg);
+.roulette-page {
+    background: url(../img/roulette_background.jpg);
     background-size: cover;
 }
 .roulette-number {
@@ -94,8 +94,8 @@ h2 {
     justify-content: center;
     padding: 3%;
     margin-left: 14%;
-	flex-wrap: wrap;
-	background-color: rgba(255, 255, 255, 0.8);
+    flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0.8);
 }
 .card h1 {
     line-height: 56px;
