@@ -30,6 +30,5 @@ const enterRoom = (e) =>{
 
 
 };
-const saveName = (e) =>{
-
-}
+const titol = document.getElementById('heading-title');
+titol.innerText = `Welcome ${sessionStorage.getItem("name")}`;

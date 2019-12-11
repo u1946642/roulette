@@ -1,5 +1,5 @@
 @font-face {
-    font-family: Gamblinlg;
+    font-family: Gambling;
     src: url(../fonts/PinyonScript-Regular.ttf);
 }
 
@@ -119,8 +119,10 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    position: relative;
 }
-.container a {
+.menu a {
     width: 60%;
     margin: 25px auto;
     padding: 3% 6%;
@@ -143,6 +145,10 @@ h2 {
     background-color: green;
     opacity: 0.9;
     border-radius: 10px;
+}
+.menu a:hover{
+    color:white;
+    background-color: #242424;
 }
 @-webkit-keyframes spaceboots {
     0% {
@@ -192,4 +198,29 @@ h2 {
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
+}
+
+h1#heading-title{
+    font-family: "Gambling";
+    font-size: 85px;
+    color: white;
+    text-shadow: 2px 2px #000;
+}
+.menu-icon{
+    position: absolute;
+    top:3%;
+    right: 3%;
+    width: 40px;
+    height: 40px;
+}
+.menu-icon img{
+    width: 100%;
+}
+.menu-icon.group{
+    right:8%;
+}
+a.menu-icon:hover{
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
 }
