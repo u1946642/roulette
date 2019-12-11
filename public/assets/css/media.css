@@ -1,0 +1,146 @@
+@media only screen and (max-width: 500px) {
+    .btn-primary {
+        margin-top: 10px;
+    }
+
+    h1#heading-title {
+        font-size: 70px;
+    }
+
+    .menu {
+        width: 85%;
+    }
+
+    .menu a {
+        width: 70%;
+        padding: 4% 6%;
+    }
+
+    .roulette-cont-lft {
+        width: 98%;
+    }
+
+    .roulette-cont-rgt {
+        width: 50%;
+    }
+
+    #winning-number {
+        width: 75%;
+    }
+
+    .bets-lft {
+        width: 44%;
+        position: absolute;
+        top: 18%;
+    }
+    .roulette-number {
+        font-size: 14px;
+    }
+
+    #countdown {
+        width: 75px;
+        height: 75px;
+        font-size: 40px;
+    }
+    .roulette-container {
+        margin-bottom: 30px;
+    }
+
+    .bets-rgt {
+        width: 100%;
+    }
+    .carousel-bets .bet h3 {
+        font-size: 40px;
+    }
+    .carousel-bets .bet p {
+        font-size: 24px;
+    }
+    .carousel-bets {
+        height: 150px;
+    }
+
+    .bets-rgt {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .carousel-bets .bet h3 {
+        font-size: 40px;
+    }
+
+    .carousel-bets .bet p {
+        font-size: 24px;
+    }
+
+    .carousel-bets {
+        height: 150px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    #usersList {
+        font-size: 16px;
+        margin-left: 12%;
+    }
+
+    .card-lft {
+        width: 45%;
+    }
+
+    .card {
+        width: 85%;
+    }
+
+    #balance {
+        font-size: 25px;
+    }
+
+    p.disclaimer {
+        font-size: 12px;
+    }
+
+    .card h1 {
+        line-height: 50px;
+    }
+
+    .card {
+        margin-left: 10%;
+    }
+
+#fusername {
+    -webkit-appearance: none;
+    border-radius: 0;
+  }
+}
+@media only screen and (max-width: 425px) {
+    .menu-icon.group {
+        /* right: 8%; */
+        right: 20%;
+    }
+
+    .menu a {
+        /* margin: 25px auto; */
+        /* font-size: 22px; */
+        margin: 20px auto;
+        font-size: 18px;
+    }
+
+    h1#heading-title {
+        /* font-size: 70px; */
+        font-size: 50px;
+    }
+    .menu a {
+        /* width: 70%; */
+        width: 85%;
+    }
+
+    .number-input button {
+        width: 2.3rem;
+        height: 2.3rem;
+    }
+    .bets-lft {
+        width: 47%;
+    }
+}

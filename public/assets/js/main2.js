@@ -160,7 +160,33 @@ $(document).ready(function() {
         slidesToShow: 5,
         autoplaySpeed: 800,
         autoplay: true,
-        arrows: false
+        arrows: false,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true
+                }
+            },
+            {
+                breakpoint: 500,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    infinite: true
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true
+                }
+            }
+        ]
     });
     refreshUsersList();
     window.setInterval(() => refreshUsersList(), 5000);
