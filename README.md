@@ -1,2 +1,2 @@
-# roulette
-Roulette web with redis database
+# roulette Web
+Roulette web MVP with NodeJS server and implemented with Redis Database.
